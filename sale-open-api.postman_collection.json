@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "4eed59dc-c46a-4fa9-8afb-9daff01f3e15",
+		"name": "sale-open-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25300027",
+		"_collection_link": "https://warped-trinity-920625.postman.co/workspace/Team-Workspace~34d91d2f-9cc2-4352-8a90-0b3e69f8e68e/collection/25300027-4eed59dc-c46a-4fa9-8afb-9daff01f3e15?action=share&source=collection_link&creator=25300027"
+	},
+	"item": [
+		{
+			"name": "product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/sale?limit=1&offset=&page=&sort&order&search=06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sale"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1",
+							"description": "Batasan jumlah data yang ingin ditarik, default = 10"
+						},
+						{
+							"key": "offset",
+							"value": "",
+							"description": "Jumlah data yang ingin di lewati, default = 0"
+						},
+						{
+							"key": "page",
+							"value": "",
+							"description": "Halaman saat ini, default = 1"
+						},
+						{
+							"key": "sort",
+							"value": null,
+							"description": "ASC/DESC, acending/descending, default = ASC"
+						},
+						{
+							"key": "order",
+							"value": null,
+							"description": "Kolom yang ingin di urutkan, default = id"
+						},
+						{
+							"key": "search",
+							"value": "06",
+							"description": "Parameter pencarian, yang akan dicari adalah invoice_id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/sale/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sale",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "id dari sale yang akan dicari"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transaction_date\": \"2024-05-07\",\r\n    \"invoice_id\": \"INV20240506\",\r\n    \"customer_name\": \"Budi\",\r\n    \"subtotal\": 38980000,\r\n    \"tax\": \"11%\",\r\n    \"discount\": \"10%\",\r\n    \"total_price\": 47165800,\r\n    \"detail\": [\r\n        {\r\n            \"product_id\": 1,\r\n            \"quantity\": 1,\r\n            \"price\": 18990000\r\n        },\r\n        {\r\n            \"product_id\": 2,\r\n            \"quantity\": 1,\r\n            \"price\": 19990000\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/sale",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sale"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transaction_date\": \"2024-05-07\",\r\n    \"invoice_id\": \"INV20240507\",\r\n    \"customer_name\": \"Budi Budiman\",\r\n    \"subtotal\": 38980000,\r\n    \"tax\": \"11%\",\r\n    \"discount\": \"10%\",\r\n    \"total_price\": 47165800,\r\n    \"detail\": [\r\n        {\r\n            \"product_id\": 1,\r\n            \"quantity\": 1,\r\n            \"price\": 18990000\r\n        },\r\n        {\r\n            \"product_id\": 2,\r\n            \"quantity\": 1,\r\n            \"price\": 19990000\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/sale/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sale",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/sale/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sale",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
