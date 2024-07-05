@@ -51,9 +51,21 @@ func CreateSale(transactionDate null.Time, data *res.SaleOpenApiSaleHeaderReques
 	return
 }
 
-func GetSales(param res.ReqPaging) (data res.ResPaging) {
+func GetSales(startDate, endDate string, param res.ReqPaging) (data res.ResPaging) {
 	var responses []models.SaleOpenApiSaleHeader
 	var where string
+	if startDate != "" {
+		if where != "" {
+			where += " AND "
+		}
+		where += "transaction_date::DATE >= '" + startDate + "'"
+	}
+	if endDate != "" {
+		if where != "" {
+			where += " AND "
+		}
+		where += "transaction_date::DATE <= '" + endDate + "'"
+	}
 	if param.Search != "" {
 		if where != "" {
 			where += " AND "

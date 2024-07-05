@@ -13,12 +13,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/product",
-					"protocol": "http",
+					"raw": "https://nizom-sale-open-api.vercel.app/api/product",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"nizom-sale-open-api",
+						"vercel",
+						"app"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"product"
@@ -45,12 +46,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/sale?limit=1&offset=&page=&sort&order&search=06",
-					"protocol": "http",
+					"raw": "https://nizom-sale-open-api.vercel.app/api/sale?limit=&offset=&page=&sort&order&search=",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"nizom-sale-open-api",
+						"vercel",
+						"app"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"sale"
@@ -58,7 +60,7 @@
 					"query": [
 						{
 							"key": "limit",
-							"value": "1",
+							"value": "",
 							"description": "Batasan jumlah data yang ingin ditarik, default = 10"
 						},
 						{
@@ -83,7 +85,7 @@
 						},
 						{
 							"key": "search",
-							"value": "06",
+							"value": "",
 							"description": "Parameter pencarian, yang akan dicari adalah invoice_id"
 						}
 					]
@@ -97,12 +99,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/sale/:id",
-					"protocol": "http",
+					"raw": "https://nizom-sale-open-api.vercel.app/api/sale/:id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"nizom-sale-open-api",
+						"vercel",
+						"app"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"sale",
@@ -134,12 +137,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/sale",
-					"protocol": "http",
+					"raw": "https://nizom-sale-open-api.vercel.app/api/sale",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"nizom-sale-open-api",
+						"vercel",
+						"app"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"sale"
@@ -163,12 +167,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/sale/:id",
-					"protocol": "http",
+					"raw": "https://nizom-sale-open-api.vercel.app/api/sale/:id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"nizom-sale-open-api",
+						"vercel",
+						"app"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"sale",
@@ -190,12 +195,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/sale/:id",
-					"protocol": "http",
+					"raw": "https://nizom-sale-open-api.vercel.app/api/sale/:id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"nizom-sale-open-api",
+						"vercel",
+						"app"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"sale",

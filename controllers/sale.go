@@ -49,8 +49,10 @@ func CreateSale(c echo.Context) error {
 }
 
 func GetSales(c echo.Context) error {
+	startDate := c.QueryParam("start_date")
+	endDate := c.QueryParam("end_date")
 	param := utils.PopulatePaging(c, "")
-	data := repositories.GetSales(param)
+	data := repositories.GetSales(startDate, endDate, param)
 
 	return c.JSON(http.StatusOK, data)
 }
