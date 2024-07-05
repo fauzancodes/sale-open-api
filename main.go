@@ -39,6 +39,9 @@ func Start() *echo.Echo {
 	config.DatabaseInit()
 	config.RunMigration()
 
+	e.GET("/", func(c echo.Context) error {
+		return c.HTML(http.StatusOK, "Welcome to nizom sale open API")
+	})
 	routes.RouteInit(e.Group("/api"))
 
 	return e

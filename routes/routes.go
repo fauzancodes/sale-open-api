@@ -1,16 +1,12 @@
 package routes
 
 import (
-	"net/http"
 	"sale-open-api/controllers"
 
 	"github.com/labstack/echo/v4"
 )
 
 func RouteInit(e *echo.Group) {
-	e.GET("/", func(c echo.Context) error {
-		return c.HTML(http.StatusOK, "Welcome to nizom sale open API")
-	})
 	sale := e.Group("/sale")
 	{
 		sale.POST("", controllers.CreateSale)
